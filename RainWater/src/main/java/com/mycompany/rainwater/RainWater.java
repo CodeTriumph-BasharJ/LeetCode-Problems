@@ -46,10 +46,7 @@ public class RainWater extends ArrayList {
                      break;
                  }
              }
-
          }
-         
-         
      }
        int sum=0;
        for(Integer j : counters)sum+=j;
