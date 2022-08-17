@@ -7,7 +7,7 @@ package com.mycompany.skyline;
 
 /**
  *
- * @author basha
+ * @author Bashar Jirjees
  */
 
 import java.util.ArrayList;
