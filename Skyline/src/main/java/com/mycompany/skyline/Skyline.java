@@ -20,7 +20,7 @@ public class Skyline {
         ArrayList<ArrayList<Integer>> skyline = new ArrayList<>();
         ArrayList<Integer> list = new ArrayList<>();
         final int row = arr.length;
-        final int column = arr[0].length;
+        
        
         int i = 0;
         int x = 0;
