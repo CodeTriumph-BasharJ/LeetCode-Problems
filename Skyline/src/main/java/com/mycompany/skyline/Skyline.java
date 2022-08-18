@@ -44,7 +44,7 @@ public class Skyline {
                 if(arr[x][2] > arr[j][2])list.add(arr[x][2]);
                 else list.add(arr[j][2]);
                 skyline.add(list);
-                if(arr[x][1] <= arr[j][1]){
+                if(arr[x][1] <= arr[j][1] && arr[x][2] != arr[j][2]){
                 list = new ArrayList<>();  
                 list.add(arr[x][1]);
                 list.add(arr[j][2]);
