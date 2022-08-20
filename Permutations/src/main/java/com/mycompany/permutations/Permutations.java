@@ -62,6 +62,7 @@ public class Permutations {
         
         i = j = 0;
         StringBuilder str = new StringBuilder();
+        
         while(true){
         str.append(perm.get(i).get(j));
         ++j;
