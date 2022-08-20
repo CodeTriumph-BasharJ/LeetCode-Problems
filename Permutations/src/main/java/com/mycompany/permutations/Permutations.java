@@ -16,7 +16,7 @@ public class Permutations {
 
     public static void main(String[] args) {
      
-        final int n = 4;
+        final int n = 2;
         ArrayList<Integer> list = new ArrayList<>();
         ArrayList<ArrayList<Integer>> perm = new ArrayList<>();
         
@@ -25,15 +25,15 @@ public class Permutations {
         int factorial = n;
         for(int i = n-1; i > 0; --i)factorial = factorial*i;
         ArrayList<Integer> data = new ArrayList<>(list);
-        final int perm_per_try = factorial / n;
         int perm_counter = 0;
         int process_counter = 0;
         int i = 1, j = 1;
         int prev;
         ArrayList<Integer> temp;
         
-        
-        while(true){
+        if(n > 2){
+          final int perm_per_try = factorial / n;
+          while(true){
             
             prev = list.get(i+1);
             list.set(i+1,list.get(i));
@@ -73,7 +73,13 @@ public class Permutations {
             ++i;
             if(i == factorial)break;
         }
-     }
+      }
+     }else if(n == 2){
+         System.out.println("Number of Permutations: " +  2);
+         System.out.println("12");
+         System.out.println("21");
+     }else if(n <= 1) System.out.println("Number of Permutations: " +  0);
+        
     }
  
 }
