@@ -16,7 +16,7 @@ public class Permutations {
 
     public static void main(String[] args) {
      
-        final int n = 9;
+        final int n = 4;
         ArrayList<Integer> list = new ArrayList<>();
         ArrayList<ArrayList<Integer>> perm = new ArrayList<>();
         
