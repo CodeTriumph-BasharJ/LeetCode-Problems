@@ -16,13 +16,11 @@ public class Skyline {
 
     public static void main(String[] args) {
         
-        int arr [][] = {{0,2,3},{2,5,3}};
+        int arr [][] = {{2,9,10},{3,7,15},{5,12,12},{15,20,10},{19,24,8}};
         ArrayList<ArrayList<Integer>> skyline = new ArrayList<>();
         ArrayList<Integer> list = new ArrayList<>();
         final int row = arr.length;
-        final int column = arr[0].length;
-       
-        int i = 0;
+
         int x = 0;
         int val_l = 0;
         int val_2 = 0;
@@ -44,7 +42,7 @@ public class Skyline {
                 if(arr[x][2] > arr[j][2])list.add(arr[x][2]);
                 else list.add(arr[j][2]);
                 skyline.add(list);
-                if(arr[x][1] <= arr[j][1]){
+                if(arr[x][1] <= arr[j][1] && arr[x][2] != arr[j][2]){
                 list = new ArrayList<>();  
                 list.add(arr[x][1]);
                 list.add(arr[j][2]);
