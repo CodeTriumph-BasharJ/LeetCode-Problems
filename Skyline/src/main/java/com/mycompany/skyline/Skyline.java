@@ -7,7 +7,7 @@ package com.mycompany.skyline;
 
 /**
  *
- * @author basha
+ * @author Bashar Jirjees
  */
 
 import java.util.ArrayList;
@@ -20,7 +20,9 @@ public class Skyline {
         ArrayList<ArrayList<Integer>> skyline = new ArrayList<>();
         ArrayList<Integer> list = new ArrayList<>();
         final int row = arr.length;
-
+        
+       
+        int i = 0;
         int x = 0;
         int val_l = 0;
         int val_2 = 0;
