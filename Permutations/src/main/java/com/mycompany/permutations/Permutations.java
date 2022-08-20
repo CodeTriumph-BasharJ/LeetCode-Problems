@@ -7,7 +7,7 @@ package com.mycompany.permutations;
 
 /**
  *
- * @author basha
+ * @author Bashar Jirjees
  */
 
 import java.util.ArrayList;
