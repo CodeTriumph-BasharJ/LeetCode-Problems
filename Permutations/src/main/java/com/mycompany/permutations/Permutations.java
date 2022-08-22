@@ -16,70 +16,61 @@ public class Permutations {
 
     public static void main(String[] args) {
      
-        final int n = 2;
-        ArrayList<Integer> list = new ArrayList<>();
-        ArrayList<ArrayList<Integer>> perm = new ArrayList<>();
-        
-        for(int i=1; i <= n; ++i) list.add(i);
-      
+        final int n = 9;
+        final ArrayList<Integer> list = new ArrayList<>();
+        final ArrayList<Integer> nums = new ArrayList<>();
+        for(int i = 1; i <= n; ++i) list.add(i);
+        for(int i = 0; i < n; ++i) nums.add(0);
         int factorial = n;
         for(int i = n-1; i > 0; --i)factorial = factorial*i;
-        ArrayList<Integer> data = new ArrayList<>(list);
-        int perm_counter = 0;
-        int process_counter = 0;
-        int i = 1, j = 1;
+
+        int i = 1;
         int prev;
+        final ArrayList<ArrayList<Integer>> perm = new ArrayList<>();
         ArrayList<Integer> temp;
-        
-        if(n > 2){
-          final int perm_per_try = factorial / n;
-          while(true){
-            
-            prev = list.get(i+1);
-            list.set(i+1,list.get(i));
-            list.set(i,prev);
-            temp = new ArrayList<>(list);
-            perm.add(temp);
-           
-            ++i;
-            ++process_counter;
-            
-            if(i == n - 1) i = 1;  
-            if(process_counter == perm_per_try && j < n){
-               process_counter = 0;
-               list = data;
-               prev = list.get(0);
-               list.set(0,list.get(j));
-               list.set(j, prev);
+        perm.add(list);
+        while(i < n){
+           if(nums.get(i) < i){
+              if(i % 2 == 0){
+                  prev = list.get(0);
+                  list.set(0, list.get(i));
+                  list.set(i, prev);
+              }else{
+                  prev = list.get(nums.get(i));
+                  list.set(nums.get(i), list.get(i));
+                  list.set(i, prev);
+              }
+               temp = new ArrayList<>(list);
+               perm.add(temp);
+               nums.set(i, nums.get(i) + 1);
                i = 1;
-               ++j;
-            }
-            ++perm_counter;
-            if(perm_counter == factorial) break;
-        }
+ 
+           }else{
+               nums.set(i, 0);
+               ++i;
+           }
+          
+       }
         
         System.out.println("Number of Permutations: " +  perm.size());
         
-        i = j = 0;
+        i =0;
+        int j = 0;
         StringBuilder str = new StringBuilder();
-        
         while(true){
         str.append(perm.get(i).get(j));
         ++j;
         if(j == n){
+           
             System.out.println(str.toString());
             str.delete(0, n);
             j=0;
             ++i;
-            if(i == factorial)break;
+            if(i == perm.size())break;
         }
       }
-     }else if(n == 2){
-         System.out.println("Number of Permutations: " +  2);
-         System.out.println("12");
-         System.out.println("21");
-     }else if(n <= 1) System.out.println("Number of Permutations: " +  0);
         
+        }
     }
- 
-}
+
+
