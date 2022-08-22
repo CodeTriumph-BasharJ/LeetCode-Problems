@@ -16,19 +16,18 @@ public class Permutations {
 
     public static void main(String[] args) {
      
-        final int n = 9;
+        final int n = 4;
         final ArrayList<Integer> list = new ArrayList<>();
         final ArrayList<Integer> nums = new ArrayList<>();
-        for(int i = 1; i <= n; ++i) list.add(i);
+        for(int i = 1; i <= n; ++i) list.add(i); //Permutations for numbers from {1,....,n}
         for(int i = 0; i < n; ++i) nums.add(0);
-        int factorial = n;
-        for(int i = n-1; i > 0; --i)factorial = factorial*i;
-
+       
         int i = 1;
         int prev;
         final ArrayList<ArrayList<Integer>> perm = new ArrayList<>();
         ArrayList<Integer> temp;
         perm.add(list);
+        
         while(i < n){
            if(nums.get(i) < i){
               if(i % 2 == 0){
