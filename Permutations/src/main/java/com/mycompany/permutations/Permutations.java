@@ -16,19 +16,18 @@ public class Permutations {
 
     public static void main(String[] args) {
      
-        final int n = 9;
+        final int n = 4;
         final ArrayList<Integer> list = new ArrayList<>();
         final ArrayList<Integer> nums = new ArrayList<>();
         for(int i = 1; i <= n; ++i) list.add(i);
         for(int i = 0; i < n; ++i) nums.add(0);
-        int factorial = n;
-        for(int i = n-1; i > 0; --i)factorial = factorial*i;
 
         int i = 1;
         int prev;
         final ArrayList<ArrayList<Integer>> perm = new ArrayList<>();
-        ArrayList<Integer> temp;
-        perm.add(list);
+        ArrayList<Integer> temp = new ArrayList<>(list);
+        perm.add(temp);
+        
         while(i < n){
            if(nums.get(i) < i){
               if(i % 2 == 0){
@@ -49,28 +48,26 @@ public class Permutations {
                nums.set(i, 0);
                ++i;
            }
-          
        }
         
         System.out.println("Number of Permutations: " +  perm.size());
-        
-        i =0;
+        i = 0;
         int j = 0;
         StringBuilder str = new StringBuilder();
+        
         while(true){
-        str.append(perm.get(i).get(j));
-        ++j;
-        if(j == n){
-           
+          str.append(perm.get(i).get(j));
+          ++j;
+          if(j == n){
+              
             System.out.println(str.toString());
             str.delete(0, n);
             j=0;
             ++i;
             if(i == perm.size())break;
-        }
-      }
-        
+          }
         }
     }
+ }
 
 
