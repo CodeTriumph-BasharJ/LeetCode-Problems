@@ -25,8 +25,8 @@ public class Permutations {
         int i = 1;
         int prev;
         final ArrayList<ArrayList<Integer>> perm = new ArrayList<>();
-        ArrayList<Integer> temp;
-        perm.add(list);
+        ArrayList<Integer> temp = new ArrayList<>(list);
+        perm.add(temp);
         
         while(i < n){
            if(nums.get(i) < i){
