@@ -19,9 +19,9 @@ public class Permutations {
         final int n = 4;
         final ArrayList<Integer> list = new ArrayList<>();
         final ArrayList<Integer> nums = new ArrayList<>();
-        for(int i = 1; i <= n; ++i) list.add(i);
+        for(int i = 1; i <= n; ++i) list.add(i); //Permutations for numbers from {1,....,n}
         for(int i = 0; i < n; ++i) nums.add(0);
-
+       
         int i = 1;
         int prev;
         final ArrayList<ArrayList<Integer>> perm = new ArrayList<>();
